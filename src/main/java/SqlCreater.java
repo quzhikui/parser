@@ -40,7 +40,6 @@ public class SqlCreater {
                 String col1=colRs1.getString("columnname");
                 String comments=colRs1.getString("columncode");
                 String coltype=colRs1.getString("coltype");
-
                 if(!colRs1.isLast()) {
                     if (coltype==null) {
                         System.out.println(col1 + ",--"+comments);
