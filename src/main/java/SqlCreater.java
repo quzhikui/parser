@@ -18,7 +18,6 @@ public class SqlCreater {
             //全量表字段
             PreparedStatement fullTablePst=con.prepareStatement("select distinct columnname,columncode,coltype from mydb.quzk_table_col  where upper(tablename)='"+tab+"'");
             ResultSet colRs=fullTablePst.executeQuery();
-
             //编写ddl
             String viewName=dbna+"."+tab+"_VIEW";
             //drop语句
