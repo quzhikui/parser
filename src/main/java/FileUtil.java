@@ -1,6 +1,8 @@
-import java.io.File;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class FileUtil {
     private String dirPath;
@@ -43,5 +45,72 @@ public class FileUtil {
             }
         }
         return fList;
+    }
+    /**
+     * 读普通文件
+     * @param file
+     * @return string
+     */
+    public String fileReader(File file){
+        FileInputStream fis = null;
+        StringBuffer sb = new StringBuffer();
+        try {
+            fis = new FileInputStream(file);
+            byte[] bytes = new byte[1024];
+            while (-1 != fis.read(bytes)) {
+                sb.append(new String(bytes));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fis.close();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
+    /**
+     * 读sql文件
+     * @param file
+     * @return string
+     */
+    public String sqlFileReader(File file){
+        BufferedReader bf =null;
+        StringBuffer sb = new StringBuffer();
+
+        try {
+            FileInputStream fr = new FileInputStream(file);
+            InputStreamReader irs=new InputStreamReader(fr, StandardCharsets.UTF_8);
+            bf = new BufferedReader(irs);
+            String valueString = null;
+            while ((valueString=bf.readLine())!=null){
+                //System.out.println(valueString);
+                //valueString=valueString.trim().substring(0,valueString.indexOf("--"));
+                if(valueString.length()>0 && valueString.lastIndexOf(";")+1==(valueString.length())){
+                    valueString=valueString+"/";
+                }
+                 if(valueString.toUpperCase().trim().indexOf("SET ")>=0) {
+                     sb.append(" ").append("\n");//跳过set语句
+                 }else{
+                     sb.append(valueString+" ").append("\n");
+                 }
+
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bf.close();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        return sb.toString();
     }
 }

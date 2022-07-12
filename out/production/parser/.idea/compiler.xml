@@ -10,5 +10,8 @@
         <module name="parser" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="parser" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

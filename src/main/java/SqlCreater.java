@@ -5,8 +5,12 @@ import java.sql.*;
 * */
 public class SqlCreater {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con=DriverManager.getConnection("jdbc:mysql://192.168.32.136:3306/mydb","root","123456");
+        //Class.forName("com.mysql.jdbc.Driver");
+        //Connection con= (Connection) DriverManager.getConnection("jdbc:mysql://192.168.32.136:3306/mydb","root","123456");
+        main.java.Connections conns=new main.java.Connections();
+        Connection con=conns.getmysqlConnection();
+
+
         //库名定义
         String dbna="SD_EDW";
         //表信息

@@ -110,42 +110,15 @@ public class ParseHtml {
         }
         return data;
     }
-    /**
-     * 读html文件
-     * @param file
-     * @return
-     */
-    public static String readHtml(File file){
-        FileInputStream fis = null;
-        StringBuffer sb = new StringBuffer();
-        try {
-            fis = new FileInputStream(file);
-            byte[] bytes = new byte[1024];
-            while (-1 != fis.read(bytes)) {
-                sb.append(new String(bytes));
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fis.close();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-        }
-        return sb.toString();
-    }
     public static void main(String[] args) {
-        String filePath="D:\\逸迅工作\\爱建信托\\爱建信托数仓模型设计\\业务文档\\新CRM数据字典";
+        String filePath="D:\\逸迅科技\\workspace\\PJ_DW\\业务文档\\新CRM数据字典";
 
-        String exFilePath="D:\\逸迅工作\\workspace\\parser";
+        String exFilePath="D:\\逸迅科技\\workspace\\parser\\output";
         String exFileName="新CRM字典";
         String exFileType="xls";
         ExcelWriter ew=new ExcelWriter();
         try {
-            ew.creater(exFilePath,exFileName,exFileType, new String[]{"表名","名称", "代码", "业务类型", "控件类型"});
+            ExcelWriter.creater(exFilePath,exFileName,exFileType, new String[]{"表名","名称", "代码", "业务类型", "控件类型"});
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -154,7 +127,7 @@ public class ParseHtml {
         List<File> files=fu.getFiles(filePath);
         for (File f: files) {
 
-            Document doc = Jsoup.parse(readHtml(f));
+            Document doc = Jsoup.parse(fu.fileReader(f));
             // 获取table对象
             Element table = doc.select("table").first();
             // 获取title对象

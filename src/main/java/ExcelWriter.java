@@ -19,7 +19,7 @@ public class ExcelWriter {
     }
 
     public void setWb(Workbook wb) {
-        this.wb = wb;
+        ExcelWriter.wb = wb;
     }
 
     public Sheet getSheet() {
@@ -27,7 +27,7 @@ public class ExcelWriter {
     }
 
     public void setSheet(Sheet sheet) {
-        this.sheet = sheet;
+        ExcelWriter.sheet = sheet;
     }
 
     public Row getRow() {
@@ -35,7 +35,7 @@ public class ExcelWriter {
     }
 
     public void setRow(Row row) {
-        this.row = row;
+        ExcelWriter.row = row;
     }
 
     public static void creater(String path, String fileName, String fileType, String[] titleRow) throws Exception {
@@ -55,7 +55,7 @@ public class ExcelWriter {
                 throw new Exception("文件格式不正确");
             }
             //创建sheet对象
-            sheet = (Sheet) wb.createSheet("sheet1");
+            sheet = wb.createSheet("sheet1");
             OutputStream outputStream = new FileOutputStream(excelPath);
             wb.write(outputStream);
             outputStream.flush();
@@ -74,7 +74,7 @@ public class ExcelWriter {
         }
         //创建sheet对象
         if (sheet==null) {
-            sheet = (Sheet) wb.createSheet("sheet1");
+            sheet = wb.createSheet("sheet1");
         }
 
         //添加表头
@@ -120,7 +120,7 @@ public class ExcelWriter {
         //循环写入行数据
         for (int i = 0; i < list.size(); i++) {
             j=j+1;//增加新行，
-            row = (Row) sheet.createRow(j);
+            row = sheet.createRow(j);
             row.setHeight((short) 500);
             row.createCell(0).setCellValue(( list.get(i)).getTitle());
             row.createCell(1).setCellValue(( list.get(i)).getName());
