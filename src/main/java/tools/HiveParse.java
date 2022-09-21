@@ -1,9 +1,13 @@
+/*
+package tools;
+
 import org.apache.hadoop.hive.ql.parse.ASTNode;
 import org.apache.hadoop.hive.ql.parse.BaseSemanticAnalyzer;
 import org.apache.hadoop.hive.ql.parse.HiveParser;
 
 import java.util.*;
 
+*/
 /**
  * 目的：获取AST中的表，列，以及对其所做的操作，如SELECT,INSERT
  * 重点：获取SELECT操作中的表和列的相关操作。其他操作这判断到表级别。
@@ -11,7 +15,8 @@ import java.util.*;
  *                     遇到TOK_TAB或TOK_TABREF则判断出当前操作的表，遇到子句则压栈当前处理，处理子句。
  *                    子句处理完，栈弹出。
  *
- */
+ *//*
+
 public class HiveParse {
 
     private  static final String UNKNOWN = "UNKNOWN";
@@ -297,4 +302,4 @@ public class HiveParse {
         System.out.println("***************别名***************");
         output(alias);
     }
-}
+}*/

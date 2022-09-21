@@ -1,3 +1,7 @@
+package tools;
+
+import common.Connections;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -54,7 +58,7 @@ public class JsonCreater {
     //HDFSReader
 
     public static String hdfsReaderCreater(String basePath,String db,String tablename) throws SQLException, ClassNotFoundException {
-        main.java.Connections conns=new main.java.Connections();
+        Connections conns=new Connections();
         Connection con2=conns.getHiveConnection();
 
         String path= basePath+db+".db/"+tablename+"/*";
@@ -111,7 +115,7 @@ public class JsonCreater {
     }
     //mysqlWriter
     public static String mysqlWriterCreater(String tablename) throws SQLException, ClassNotFoundException {
-        main.java.Connections conns=new main.java.Connections();
+        Connections conns=new Connections();
         Connection con1=conns.getmysqlConnectionTY();
 
         String acct="ajxtiris";//con1.getMetaData().getUserName();

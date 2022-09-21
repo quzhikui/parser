@@ -1,15 +1,13 @@
+/*
+package tools;
+
+import common.FileUtil;
 import io.trino.hadoop.$internal.org.apache.commons.io.FilenameUtils;
-import org.antlr.runtime.NoViableAltException;
 import org.apache.hadoop.hive.ql.parse.ASTNode;
 import org.apache.hadoop.hive.ql.parse.ParseDriver;
 import org.apache.hadoop.hive.ql.parse.ParseException;
-import org.apache.hadoop.hive.ql.parse.SemanticException;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.io.File;
-import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -50,4 +48,4 @@ public class ParseSql{
             }
         }
     }
-}
+}*/

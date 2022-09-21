@@ -1,0 +1,18 @@
+#重定向执行jar包的class文件
+nohup java -cp parser-1.0-SNAPSHOT-jar-with-dependencies.jar tools.DataSearch > out.log &
+
+kerberos相关的命令
+#查看当前认证用户
+klist
+#可以通过kinit验证是否该问题
+kinit -k -t /xdata/Multi-ExecuteFrame/conf/impala.keytab impala/ajxt-hdp-dn01@HADOOP.COM
+## 如果是这个问题，需要到kerberos管理节点里重新导出keytab
+### 进入控制台
+kadmin.local
+### 查看principal（以下命令都在控制台内执行）
+list_principals
+### 导出keytab信息。-norandkey参数，密钥信息不修改导出 -glob参数是可以模糊匹配多个principals。可以重复该命令，导出多个principals到同一个keytab文件中
+ktadd -k /xdata/Multi-ExecuteFrame/conf/impala.keytab -norandkey -glob impala/ajxt-hdp-dn01@HADOOP.COM
+
+maven注册本地jar包的命令
+mvn install:install-file "-DgroupId=com.cloudera" "-DartifactId=hive-jdbc-2.1.1-cdh6.3.2-standalone" "-Dversion=2.1.1" "-Dpackaging=jar" "-Dfile=D:\software\hive-jdbc-2.1.1-cdh6.3.2-standalone.jar"

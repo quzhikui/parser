@@ -1,9 +1,10 @@
+package tools;
+
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import common.FileUtil;
 import io.trino.hadoop.$internal.org.apache.commons.io.FilenameUtils;
-import org.apache.hadoop.hive.ql.parse.ASTNode;
-import org.apache.hadoop.hive.ql.parse.ParseDriver;
 
 import java.io.BufferedReader;
 import java.io.File;

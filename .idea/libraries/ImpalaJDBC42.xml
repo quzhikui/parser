@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="HiveJDBC4">
+  <library name="ImpalaJDBC42">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../org_file/HiveJDBC4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../software/ImpalaJDBC42.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

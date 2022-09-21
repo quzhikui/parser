@@ -1,3 +1,5 @@
+package common;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -74,6 +76,33 @@ public class FileUtil {
         return sb.toString();
     }
     /**
+     * 读普通文件
+     * @param filepath
+     * @return string
+     */
+    public String fileReader(String filepath){
+        FileInputStream fis = null;
+        StringBuffer sb = new StringBuffer();
+        try {
+            fis = new FileInputStream(filepath);
+            byte[] bytes = new byte[1024];
+            while (-1 != fis.read(bytes)) {
+                sb.append(new String(bytes));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                fis.close();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        return sb.toString();
+    }
+    /**
      * 读sql文件
      * @param file
      * @return string
@@ -112,5 +141,15 @@ public class FileUtil {
             }
         }
         return sb.toString();
+    }
+    /**
+     * 读普通文件
+     * @param filepath
+     * @return string
+     */
+    public static  void fileWriter(String filepath,String content,boolean bl) throws IOException {
+        FileWriter fw = new FileWriter(filepath, bl);
+        fw.write(content+"\n");
+        fw.close();
     }
 }
