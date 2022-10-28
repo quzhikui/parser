@@ -1,8 +1,8 @@
-package com.tools.parser.common;
+package com.untils.parser.common;
 
-import com.tools.parser.bean.Energy;
-import com.tools.parser.bean.Links;
-import com.tools.parser.bean.Nodes;
+import com.untils.parser.bean.Energy;
+import com.untils.parser.bean.Links;
+import com.untils.parser.bean.Nodes;
 
 import java.util.*;
 

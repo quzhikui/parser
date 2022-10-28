@@ -1,8 +1,8 @@
 
-package com.tools.parser.tools;
+package com.untils.parser.tools;
 
-import com.tools.parser.common.ASTParse;
-import com.tools.parser.common.FileUtil;
+import com.untils.parser.common.ASTParse;
+import com.untils.parser.common.FileUtil;
 import io.trino.hadoop.$internal.org.apache.commons.io.FilenameUtils;
 import org.apache.hadoop.hive.ql.parse.ASTNode;
 import org.apache.hadoop.hive.ql.parse.ParseDriver;

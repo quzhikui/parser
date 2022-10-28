@@ -1,5 +1,5 @@
 
-package com.tools.parser.common;
+package com.untils.parser.common;
 
 import org.apache.hadoop.hive.ql.parse.ASTNode;
 import org.apache.hadoop.hive.ql.parse.BaseSemanticAnalyzer;

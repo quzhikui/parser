@@ -1,4 +1,4 @@
-package com.tools.parser.tools;
+package com.untils.parser.tools;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;

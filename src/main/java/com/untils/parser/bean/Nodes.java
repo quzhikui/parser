@@ -1,4 +1,4 @@
-package com.tools.parser.bean;
+package com.untils.parser.bean;
 
 public class Nodes {
     private String name;

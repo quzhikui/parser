@@ -1,9 +1,9 @@
-package com.tools.parser.tools;
+package com.untils.parser.tools;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.tools.parser.common.FileUtil;
+import com.untils.parser.common.FileUtil;
 import io.trino.hadoop.$internal.org.apache.commons.io.FilenameUtils;
 
 import java.io.BufferedReader;

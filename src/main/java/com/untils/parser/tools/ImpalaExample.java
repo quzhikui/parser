@@ -1,6 +1,6 @@
-package com.tools.parser.tools;
+package com.untils.parser.tools;
 
-import com.tools.parser.common.Connections;
+import com.untils.parser.common.Connections;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

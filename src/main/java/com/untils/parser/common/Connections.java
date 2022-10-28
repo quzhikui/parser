@@ -1,4 +1,4 @@
-package com.tools.parser.common;
+package com.untils.parser.common;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.security.UserGroupInformation;
